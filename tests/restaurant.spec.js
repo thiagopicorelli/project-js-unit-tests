@@ -103,19 +103,18 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
     objetoRetornado6.order("agua");
     objetoRetornado6.order("sopa");
     objetoRetornado6.order("sashimi");
-    expect(objetoRetornado6.consumption).toContain('coxinha', 'agua', 'sopa', 'sashimi');
+    expect(objetoRetornado6.consumption).toEqual(['coxinha', 'agua', 'sopa', 'sashimi']);
     // ```
 
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
 
     // TESTE 7: Verifique se a função `order` aceita que pedidos repetidos sejam acrescidos a `consumption`.
-    // ```
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.order('agua');
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.consumption // Retorno: ['coxinha', 'agua', 'coxinha']
-    // ```
+    const objetoRetornado7 = createMenu();
+    objetoRetornado7.order('coxinha');
+    objetoRetornado7.order('agua');
+    objetoRetornado7.order('coxinha');
+    expect(objetoRetornado7.consumption).toEqual(['coxinha', 'agua', 'coxinha']);
 
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
