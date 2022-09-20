@@ -79,6 +79,7 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     // ```
+    expect(objetoRetornado.consumption).toHaveLength(0);
 
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
