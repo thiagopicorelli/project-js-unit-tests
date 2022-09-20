@@ -64,13 +64,12 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
     // considerando que a função createMenu() foi chamada com o objeto: `{ food: {}, drink: {} }`.
     // const objetoRetornado = createMenu({ food: {}, drink: {} });
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
-    const objetoInput = { food: {}, drink: {} };
-    expect(createMenu(objetoInput).fetchMenu()).toHaveProperty(Object.keys(objetoInput));
     // TESTE 3: Verifique se o menu passado pra função createMenu() é idêntico ao menu recuperado pela função 'objetoRetornado.fetchMenu()'
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
     // ```
+    const objetoInput = { food: {}, drink: {} };
     expect(createMenu(objetoInput).fetchMenu()).toEqual(objetoInput);
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
