@@ -95,6 +95,21 @@
 
 const createMenu = (myMenu) => ({ fetchMenu: () => myMenu, 
                                   consumption: [],
-                                  order(str) { this.consumption.push(str); } });
+                                  order(str) { this.consumption.push(str); }, 
+                                  pay() {
+                                    let val = 0;
+                                    const menuKeys = Object.keys(myMenu);
+                                    const fullMenu = {};
+
+                                    for (let i = 0; i < menuKeys.length; i += 1) { // Junta as chaves
+                                      Object.assign(fullMenu, myMenu[menuKeys[i]]);
+                                    }
+                                    
+                                    for (let i = 0; i < this.consumption.length; i += 1) {
+                                      val += fullMenu[this.consumption[i]];
+                                    }
+
+                                    return val;
+                                  } });
 
 module.exports = createMenu;
